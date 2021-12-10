@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './MainMenu.css'
 
 const MainMenu = () => {
@@ -11,7 +11,7 @@ const MainMenu = () => {
         <ul className="MainMenu-list">
           {menuItems.map((item) => (
             <li key={item} className="MainMenu-button">
-              {item}
+              <Link to={item}>{item}</Link>
             </li>
           ))}
         </ul>
