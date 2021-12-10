@@ -1,21 +1,49 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import './MainMenu.css'
+const MainMenuWrapper = styled.nav``;
+
+const MainMenuList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const MainMenuButton = styled.li`
+  margin-left: 32px;
+  margin-right: 32px;
+  padding: 0;
+  font: inherit;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+const Hyperlink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
 
 const MainMenu = () => {
   const menuItems = ['About store', 'Catalog', 'News', 'Login'];
 
   return (
     <>
-      <nav className="MainMenu">
-        <ul className="MainMenu-list">
+      <MainMenuWrapper>
+        <MainMenuList>
           {menuItems.map((item) => (
-            <li key={item} className="MainMenu-button">
-              {item}
-            </li>
+            <MainMenuButton key={item}>
+              <Hyperlink to={item}>{item}</Hyperlink>
+            </MainMenuButton>
           ))}
-        </ul>
-      </nav>
+        </MainMenuList>
+      </MainMenuWrapper>
     </>
   )
 };

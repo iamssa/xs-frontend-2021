@@ -1,14 +1,28 @@
 import React from 'react';
-
 import MainMenu from '../main-menu/MainMenu';
-import './Head.css'
+import styled from 'styled-components';
+
+const HeadWrapper = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 40px 60px;
+
+font-size: 18px;
+line-height: 25px;
+`;
+
+const HeadLogo = styled.div`
+font-weight: 800;
+cursor: pointer;
+`
 
 const Head = () => {
   return (
-    <div className="Head">
-      <div className="Head-logo">Logo</div>
+    <HeadWrapper>
+      <HeadLogo>Logo</HeadLogo>
       <MainMenu/>
-    </div>
+    </HeadWrapper>
   )
 };
 
